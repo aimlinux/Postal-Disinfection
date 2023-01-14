@@ -1,0 +1,1 @@
+echoテストができるサーバーはwss://echo.websocket.org/
