@@ -1,0 +1,17 @@
+<html>
+<head>
+    <script src="http://code.jquery.com/jquery-latest.min.js">
+    </script>
+    <script>
+        $(function () {
+            var ws = new WebSocket("ws://192.168.100.136:5555/");
+            ws.onmessage = function (message) {
+                document.getElementById("recived").innerHTML = message.data;
+            }
+        })
+    </script>
+</head>
+<body>
+    <div id="recived"></div>
+</body>
+</html>
