@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+  <script>
+    $(function(){
+      // RaspberryPiへ10005番ポートで接続
+      var ws = new WebSocket("ws://raspberrypi.local:10005/");
+      // サーバーからのメッセージ受信時のイベント
+      ws.onmessage = function(message){
+        $('textarea').val($('textarea').val() + message.data + '\n')
+      }
+      setTimeout(function(){
+        // サーバーへメッセージ送信
+        ws.send('from html');
+      }, 6000)
+    })
+  </script>
+</head>
+<body>
+  <textarea style="width:400px;height:100px"></textarea>
+</body>
+</html>
