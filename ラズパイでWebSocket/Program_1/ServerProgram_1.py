@@ -8,7 +8,7 @@ from websocket_server import WebsocketServer
 def sendMessage(client, server):
     server.send_message_to_all("Hello world! This is Raspberry Pi!")
 
-server = WebsocketServer(5555, host="192.168.100.136")
+server = WebsocketServer(5555, host="127.0.0.1")
 server.set_fn_new_client(sendMessage)
 server.run_forever()
 
