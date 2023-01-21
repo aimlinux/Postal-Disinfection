@@ -7,7 +7,7 @@ from io import BytesIO
 import cv2
 import numpy as np
 
-ws = create_connection("ws://192.168.1.201:8080/camera")
+ws = create_connection("ws://172.27.2.111:8080/camera")
 
 
 # decode
